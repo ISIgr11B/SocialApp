@@ -8,5 +8,6 @@ namespace Bll.Models.ContentModels
 {
     public class FriendsModel
     {
+        public List<PersonModel> Peoples { get; set; }
     }
 }

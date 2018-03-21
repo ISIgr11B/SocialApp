@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bll.Services.ProfilesServices;
 using Bll.Services.TestService;
 
 namespace Bll.Services
@@ -10,10 +11,11 @@ namespace Bll.Services
     public class ServiceFactory : IServiceFactory
     {
 
-        #region IDisposable Support
+        
 
         private bool disposedValue = false; // To detect redundant calls
         private readonly ITestService _testService;
+        private readonly IPrivatePageService _privatePageService;
 
         public ITestService TestService
         {
@@ -23,13 +25,23 @@ namespace Bll.Services
             }
         }
 
+        public IPrivatePageService PrivatePageService
+        {
+            get
+            {
+                return _privatePageService;
+            }
+        }
+
         public ServiceFactory(
-            ITestService testService
+            ITestService testService,
+            IPrivatePageService privatePageService
             )
         {
             _testService = testService;
+            _privatePageService = privatePageService;
         }
-
+        #region IDisposable Support
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)

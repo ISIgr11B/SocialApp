@@ -1,0 +1,35 @@
+﻿@model Bll.Models.PageModels.PrivatePageModel
+
+@{
+    var title = @Model.Person.FirstName +" "+ @Model.Person.LastName; ;
+    ViewData["Title"] = title;
+}
+
+<div>
+    <h2>@Model.Person.FirstName @Model.Person.LastName</h2>
+    <img src="@Model.Person.Picture" style="max-width:200px; max-height: 200px;" />
+    
+    <hr />
+
+    <dl class="dl-horizontal">
+        <div>
+            <h3>Zdjęcia</h3>
+            @foreach(var picture in Model.PhotosGallery.PhotosPath)
+            {                
+                <img src="@picture" style="max-width:100px; max-height: 100px;" />
+            }
+        </div>
+        <div class="friend">
+            <h3>Znajomi</h3>
+            @foreach (var person in Model.Friends.Peoples)
+            {
+                <div>
+                    <img src="@Model.Person.Picture" style="max-width:100px; max-height: 100px;" />
+                </div>
+                <div>
+                    @person.FirstName @person.LastName
+                </div>
+            }
+        </div>
+    </dl>
+</div>

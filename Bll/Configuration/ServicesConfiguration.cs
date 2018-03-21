@@ -1,4 +1,5 @@
 ﻿using Bll.Services;
+using Bll.Services.ProfilesServices;
 using Bll.Services.TestService;
 using Dal.Repositories.TestRepository;
 using Dal.UnitOfWork;
@@ -15,6 +16,7 @@ namespace Bll.Configuration
             /*Serwisy */
             services.AddScoped<IServiceFactory, ServiceFactory>();
             services.AddScoped<ITestService, TestService>();
+            services.AddScoped<IPrivatePageService, PrivatePageService>();
 
             /*UnitOfWork */
             services.AddScoped<IUnitOfWork, UnitOfWork>();

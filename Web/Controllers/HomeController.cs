@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Bll.Models.ContentModels;
 using Bll.Models.PageModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -30,18 +31,15 @@ namespace Web.Controllers
         public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
-            PrivatePageModel privatePage = await _apiCaller.CallApi<PrivatePageModel>("", Helpers.HttpMethodType.GET, "currentuser/GetPrivatePage");            
+            PrivatePageModel privatePage = await _apiCaller.CallApi<PrivatePageModel>("", Helpers.HttpMethodType.GET, "currentuser/GetOwnPage");            
 
             return View(privatePage);
         }
-
-        public IActionResult Contact()
+        public IActionResult Peoples()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            var list = new List<PersonModel>() { new PersonModel { FirstName = "Adam", LastName = "Nowak" }, new PersonModel { FirstName = "Jan", LastName = "Kowalski" } };
+            return View(list);
         }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

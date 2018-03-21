@@ -19,13 +19,9 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public PrivatePageModel GetPrivatePage()
-        {
-            var page = new PrivatePageModel {
-                Person = new PersonModel { FirstName="Jan",LastName = "Kowalski"}
-                };
-
-            return page;
+        public PrivatePageModel GetOwnPage()
+        {            
+            return _serviceFactory.PrivatePageService.GetOwnPage();
         }
     }
 }

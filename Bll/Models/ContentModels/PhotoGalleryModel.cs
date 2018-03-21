@@ -8,5 +8,6 @@ namespace Bll.Models.ContentModels
 {
     public class PhotoGalleryModel
     {
+        public List<string> PhotosPath { get; set; }
     }
 }

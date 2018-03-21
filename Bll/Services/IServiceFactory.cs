@@ -1,4 +1,5 @@
-﻿using Bll.Services.TestService;
+﻿using Bll.Services.ProfilesServices;
+using Bll.Services.TestService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace Bll.Services
     public interface IServiceFactory : IDisposable
     {
         ITestService TestService { get; }
+        IPrivatePageService PrivatePageService {get;}
     }
 }
