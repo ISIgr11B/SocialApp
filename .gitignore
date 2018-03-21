@@ -1,0 +1,5 @@
+
+*.ide-shm
+*.ide-wal
+.vs/SocialApp/v15/Server/sqlite3/storage.ide
+.vs/SocialApp/v15/.suo
