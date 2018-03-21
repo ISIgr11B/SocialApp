@@ -3,3 +3,4 @@
 *.ide-wal
 .vs/SocialApp/v15/Server/sqlite3/storage.ide
 .vs/SocialApp/v15/.suo
+.vs/config/applicationhost.config
