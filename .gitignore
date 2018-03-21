@@ -42,3 +42,6 @@ _ReSharper*/
 
 # Office Temp Files
 ~$*
+.vs/SocialApp/v15/Server/sqlite3/storage.ide
+.vs/SocialApp/v15/Server/sqlite3/storage.ide-shm
+.vs/SocialApp/v15/Server/sqlite3/storage.ide-wal
