@@ -7,3 +7,12 @@ D:\dev\c#\SocialApp\SocialApp\Database\obj\Debug\Database.csproj.CoreCompileInpu
 D:\dev\c#\SocialApp\SocialApp\Database\obj\Debug\Database.exe
 D:\dev\c#\SocialApp\SocialApp\Database\obj\Debug\Database.pdb
 D:\dev\c#\SocialApp\SocialApp\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+D:\dev\c#\Git\SocialApp\SocialApp\Database\bin\Debug\LocalDB.mdf
+D:\dev\c#\Git\SocialApp\SocialApp\Database\bin\Debug\LocalDB_log.ldf
+D:\dev\c#\Git\SocialApp\SocialApp\Database\bin\Debug\Database.exe.config
+D:\dev\c#\Git\SocialApp\SocialApp\Database\bin\Debug\Database.exe
+D:\dev\c#\Git\SocialApp\SocialApp\Database\bin\Debug\Database.pdb
+D:\dev\c#\Git\SocialApp\SocialApp\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+D:\dev\c#\Git\SocialApp\SocialApp\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+D:\dev\c#\Git\SocialApp\SocialApp\Database\obj\Debug\Database.exe
+D:\dev\c#\Git\SocialApp\SocialApp\Database\obj\Debug\Database.pdb
