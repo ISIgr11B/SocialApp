@@ -45,3 +45,4 @@ _ReSharper*/
 .vs/SocialApp/v15/Server/sqlite3/storage.ide
 .vs/SocialApp/v15/Server/sqlite3/storage.ide-shm
 .vs/SocialApp/v15/Server/sqlite3/storage.ide-wal
+.vs/config/applicationhost.config
