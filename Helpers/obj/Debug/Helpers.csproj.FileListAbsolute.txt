@@ -6,7 +6,6 @@ D:\dev\c#\SocialApp\SocialApp\Helpers\obj\Debug\Helpers.dll
 D:\dev\c#\SocialApp\SocialApp\Helpers\obj\Debug\Helpers.pdb
 D:\dev\c#\Git\SocialApp\SocialApp\Helpers\bin\Debug\Helpers.dll
 D:\dev\c#\Git\SocialApp\SocialApp\Helpers\bin\Debug\Helpers.pdb
-D:\dev\c#\Git\SocialApp\SocialApp\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache
 D:\dev\c#\Git\SocialApp\SocialApp\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
 D:\dev\c#\Git\SocialApp\SocialApp\Helpers\obj\Debug\Helpers.dll
 D:\dev\c#\Git\SocialApp\SocialApp\Helpers\obj\Debug\Helpers.pdb
