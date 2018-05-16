@@ -8,7 +8,7 @@ using Vive.Vcs.Visualisation.Dal.VisualisationDbContext.Repositories;
 
 namespace Dal.Repositories.TestRepository
 {
-    public interface ITestRepository :IBaseRepository<Test>
+    public interface ITestRepository : IBaseRepository<Test>
     {
     }
 }

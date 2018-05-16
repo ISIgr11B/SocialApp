@@ -8,5 +8,6 @@ namespace Bll.Models.PageModels
         public PersonModel Person { get; set; }
         public PhotoGalleryModel PhotosGallery { get; set; }
         public FriendsModel Friends { get; set; }
+        public ContextWallModel ContextWall { get; set; }
     }
 }

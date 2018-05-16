@@ -18,9 +18,15 @@ namespace Dal.Context
         {
             modelBuilder.Entity<Test>().
                 ToTable("Test", "dbo");
+            modelBuilder.Entity<Test>().
+                ToTable("Users", "dbo");
+            modelBuilder.Entity<Test>().
+                ToTable("Accounts", "dbo");
         }
 
         public DbSet<Test> Tests { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<AccountEntity> Accounts { get; set; }
 
     }
 }

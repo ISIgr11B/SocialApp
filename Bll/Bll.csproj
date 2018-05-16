@@ -63,9 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ServicesConfiguration.cs" />
+    <Compile Include="Models\ContentModels\ContextWallModel.cs" />
     <Compile Include="Models\ContentModels\FriendsModel.cs" />
     <Compile Include="Models\ContentModels\PersonModel.cs" />
     <Compile Include="Models\ContentModels\PhotoGalleryModel.cs" />
+    <Compile Include="Models\ContentModels\PostModel.cs" />
     <Compile Include="Models\ContentModels\PublicPersonModel.cs" />
     <Compile Include="Models\PageModels\PrivatePageModel.cs" />
     <Compile Include="Models\PageModels\PublicPageModel.cs" />

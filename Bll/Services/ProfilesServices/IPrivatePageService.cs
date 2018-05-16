@@ -9,6 +9,7 @@ namespace Bll.Services.ProfilesServices
 {
     public interface IPrivatePageService
     {
+        /*Metoda zwracająca własną stronę*/
         PrivatePageModel GetOwnPage();
     }
 }

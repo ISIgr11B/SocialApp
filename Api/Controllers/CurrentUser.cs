@@ -23,5 +23,13 @@ namespace Api.Controllers
         {            
             return _serviceFactory.PrivatePageService.GetOwnPage();
         }
+        [HttpPost]
+        public IActionResult PostPicture([FromBody] object Picture)
+        {
+            //WebImage photo = 
+
+            return Ok();
+        }
+       
     }
 }
