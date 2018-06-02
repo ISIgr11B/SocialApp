@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Dal.Entities
     {
         [Key, Required]
         public int Id { get; set; }
+        [ForeignKey("User")]
+        public string UserLogin { get; set; }
         [Required]
         public string UserIdentificator { get; set; }
         [Required]
