@@ -5,10 +5,11 @@ namespace Dal.Context
 {
     public class MainDbContext : DbContext
     {
-
-        // Add-Migration -Name "" -Project "Dal" -StartupProject "Api"
-        // Update-Database -Project  "Dal" -StartUpProject "Api"
-        // Remove-Migration -Project "Dal" -StartupProject "Api"
+        /*
+        Add-Migration -Name "" -Project "Dal" -StartupProject "Api"
+        Update-Database -Project  "Dal" -StartUpProject "Api"
+        Remove-Migration -Project "Dal" -StartupProject "Api"
+        */
         public MainDbContext(DbContextOptions<MainDbContext> options)
             : base(options)
         {
@@ -22,10 +23,12 @@ namespace Dal.Context
         {
             modelBuilder.Entity<Test>().
                 ToTable("Test", "dbo");
-            modelBuilder.Entity<Test>().
+            modelBuilder.Entity<UserEntity>().
                 ToTable("User", "dbo");
-            modelBuilder.Entity<Test>().
-                ToTable("Account", "dbo");
+            modelBuilder.Entity<AccountEntity>().
+                ToTable("Account", "dbo").
+                HasOne(p=> p.User).
+                WithOne(p => p.Account);
         }
 
         public DbSet<Test> Tests { get; set; }

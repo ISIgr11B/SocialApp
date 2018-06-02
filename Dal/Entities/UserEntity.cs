@@ -18,5 +18,7 @@ namespace Dal.Entities
         public DateTime Birthdate { get; set; }
         public DateTime JoinDate { get; set; }
         public string Gender { get; set; }
+
+        public AccountEntity Account { get; set; }
     }
 }

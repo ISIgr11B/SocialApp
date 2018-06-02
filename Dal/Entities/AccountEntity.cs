@@ -14,7 +14,9 @@ namespace Dal.Entities
     {
         [Key, Required]
         public int Id { get; set; }
-        [ForeignKey("User")]
+        [ForeignKey("UserId")]
+        public int UserId { get; set; }
+        [Required]
         public string UserLogin { get; set; }
         [Required]
         public string UserIdentificator { get; set; }
@@ -24,6 +26,8 @@ namespace Dal.Entities
             DataType(DataType.Password),
             Display(Name ="Hasło"),
             RegularExpression(@"^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)).+$)")]
-        public SecureString Password { get; set; }
+        public String Password { get; set; }
+
+        public UserEntity User { get; set; }
     }
 }
