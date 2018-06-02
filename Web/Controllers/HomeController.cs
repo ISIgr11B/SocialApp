@@ -31,7 +31,7 @@ namespace Web.Controllers
         public async Task<IActionResult> About()
         {
             ViewData["Message"] = "Your application description page.";
-            PrivatePageModel privatePage = await _apiCaller.CallApi<PrivatePageModel>("", Helpers.HttpMethodType.GET, "currentuser/GetOwnPage");            
+            PrivatePageModel privatePage = await _apiCaller.CallApi<PrivatePageModel>("", Helpers.HttpMethodType.GET, "OwnPage");            
 
             return View(privatePage);
         }

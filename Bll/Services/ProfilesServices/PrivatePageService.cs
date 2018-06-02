@@ -5,12 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Bll.Models.ContentModels;
 using Bll.Models.PageModels;
+using Dal.UnitOfWork;
 
 namespace Bll.Services.ProfilesServices
 {
-    public class PrivatePageService : IPrivatePageService
+    public class PrivatePageService :ServiceBase, IPrivatePageService
     {
-        public PrivatePageModel GetOwnPage()
+        public PrivatePageService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        {
+        }
+
+        public Task<int> DeleteOwnPage(string userLogin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<PrivatePageModel> GetOwnPage(string userIdentificator)
         {
             var page = new PrivatePageModel
             {
@@ -39,6 +49,16 @@ namespace Bll.Services.ProfilesServices
                 }
             };
             return page;
+        }
+
+        public Task<int> PostOwnPage(string userLogin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> UpdateOwnPage(string userLogin)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,5 +12,6 @@ namespace Bll.Services
     {
         ITestService TestService { get; }
         IPrivatePageService PrivatePageService {get;}
+        IPersonInfoService PersonInfoService { get; }
     }
 }

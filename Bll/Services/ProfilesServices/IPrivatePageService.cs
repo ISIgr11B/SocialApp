@@ -10,6 +10,9 @@ namespace Bll.Services.ProfilesServices
     public interface IPrivatePageService
     {
         /*Metoda zwracająca własną stronę*/
-        PrivatePageModel GetOwnPage();
+        Task<PrivatePageModel> GetOwnPage(string userIdentificator);
+        Task<int> PostOwnPage(string userLogin);
+        Task<int> UpdateOwnPage(string userLogin);
+        Task<int> DeleteOwnPage(string userLogin);
     }
 }

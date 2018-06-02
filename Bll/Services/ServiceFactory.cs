@@ -9,37 +9,26 @@ using Bll.Services.TestService;
 namespace Bll.Services
 {
     public class ServiceFactory : IServiceFactory
-    {
-
-        
+    {       
 
         private bool disposedValue = false; // To detect redundant calls
         private readonly ITestService _testService;
         private readonly IPrivatePageService _privatePageService;
+        private readonly IPersonInfoService _personInfoService;
 
-        public ITestService TestService
-        {
-            get
-            {
-                return _testService;
-            }
-        }
-
-        public IPrivatePageService PrivatePageService
-        {
-            get
-            {
-                return _privatePageService;
-            }
-        }
+        public ITestService TestService { get => _testService; }
+        public IPrivatePageService PrivatePageService { get => _privatePageService; }
+        public IPersonInfoService PersonInfoService { get => _personInfoService; }
 
         public ServiceFactory(
             ITestService testService,
-            IPrivatePageService privatePageService
+            IPrivatePageService privatePageService,
+            IPersonInfoService personInfoService
             )
         {
             _testService = testService;
             _privatePageService = privatePageService;
+            _personInfoService = personInfoService;
         }
         #region IDisposable Support
         protected virtual void Dispose(bool disposing)

@@ -27,7 +27,7 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> ProfilePage()
         {
-            var privatePage = await _apiCaller.CallApi<PrivatePageModel>("", Helpers.HttpMethodType.GET, "currentuser/GetOwnPage");
+            var privatePage = await _apiCaller.CallApi<PrivatePageModel>("", Helpers.HttpMethodType.GET, "OwnPage");
 
             return View(privatePage);
         }

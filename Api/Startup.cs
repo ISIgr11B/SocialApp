@@ -39,7 +39,7 @@ namespace Api
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "api/{controller=Values}/{action=Index}/{id?}");
+                    template: "api/{controller}/{action=Index}/{id?}");
             });
         }
     }

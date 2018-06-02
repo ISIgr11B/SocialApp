@@ -17,6 +17,7 @@ namespace Bll.Configuration
             services.AddScoped<IServiceFactory, ServiceFactory>();
             services.AddScoped<ITestService, TestService>();
             services.AddScoped<IPrivatePageService, PrivatePageService>();
+            services.AddScoped<IPersonInfoService, PersonInfoService>();
 
             /*UnitOfWork */
             services.AddScoped<IUnitOfWork, UnitOfWork>();
