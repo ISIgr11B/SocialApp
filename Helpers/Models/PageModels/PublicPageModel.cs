@@ -1,11 +1,11 @@
-﻿using Bll.Models.ContentModels;
+﻿using Helpers.Models.ContentModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bll.Models.PageModels
+namespace Helpers.Models.PageModels
 {
     /*Model wyświelanych informacji o stronie publicznej*/
     public class PublicPageModel

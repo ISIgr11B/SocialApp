@@ -1,4 +1,4 @@
-﻿using Bll.Models.ContentModels;
+﻿using Helpers.Models.ContentModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

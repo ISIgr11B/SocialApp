@@ -1,6 +1,6 @@
-﻿using Bll.Models.ContentModels;
+﻿using Helpers.Models.ContentModels;
 
-namespace Bll.Models.PageModels
+namespace Helpers.Models.PageModels
 {
     /*Model wyświelanych informacji o stronie prywatne*/
     public class PrivatePageModel

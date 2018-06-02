@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bll.Models.ContentModels;
+using Helpers.Models.ContentModels;
 using Bll.Services;
 using Microsoft.AspNetCore.Mvc;
 

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bll.Models.ContentModels
+namespace Helpers.Models
 {
-    public class FriendsModel
+    public class TestBllModel
     {
-        public List<PersonModel> Peoples { get; set; }
+        public string Value { get; set; }
     }
 }

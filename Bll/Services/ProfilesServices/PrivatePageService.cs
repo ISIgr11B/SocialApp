@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bll.Models.ContentModels;
-using Bll.Models.PageModels;
+using Helpers.Models.ContentModels;
+using Helpers.Models.PageModels;
 using Dal.UnitOfWork;
 
 namespace Bll.Services.ProfilesServices

@@ -1,6 +1,5 @@
-﻿using Bll.Models.ContentModels;
-using Bll.Models.PageModels;
-using Bll.Services;
+﻿using Bll.Services;
+using Helpers.Models.ContentModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
