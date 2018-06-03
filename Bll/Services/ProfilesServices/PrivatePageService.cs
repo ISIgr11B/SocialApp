@@ -51,12 +51,12 @@ namespace Bll.Services.ProfilesServices
             return page;
         }
 
-        public Task<int> PostOwnPage(string userLogin)
+        public Task<int> PostOwnPage(PrivatePageModel privatePage)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> UpdateOwnPage(string userLogin)
+        public Task<int> UpdateOwnPage(string userLogin, PrivatePageModel privatePage)
         {
             throw new NotImplementedException();
         }

@@ -11,8 +11,8 @@ namespace Bll.Services.ProfilesServices
     {
         /*Metoda zwracająca własną stronę*/
         Task<PrivatePageModel> GetOwnPage(string userIdentificator);
-        Task<int> PostOwnPage(string userLogin);
-        Task<int> UpdateOwnPage(string userLogin);
+        Task<int> PostOwnPage(PrivatePageModel privatePage);
+        Task<int> UpdateOwnPage(string userLogin, PrivatePageModel privatePage);
         Task<int> DeleteOwnPage(string userLogin);
     }
 }

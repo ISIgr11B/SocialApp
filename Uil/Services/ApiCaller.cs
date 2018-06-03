@@ -7,23 +7,22 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Web.Configuration;
 
-namespace Web.Services
+namespace Uil.Services
 {
     public class ApiCaller : IApiCaller
     {
-        private readonly IOptions<SettingsConfiguration> _settingsConfiguration;
+        
         private readonly string apiUrl;
         public ApiCaller(IOptions<SettingsConfiguration> settingsConfiguration)
         {
-            _settingsConfiguration = settingsConfiguration;
-            apiUrl = _settingsConfiguration.Value.ApiUrl;
+            apiUrl = settingsConfiguration.Value.ApiUrl;
         }
 
         public async Task<T> CallApi<T>(string accessToken, HttpMethodType httpMethodType, string requestUrl, HttpContent data = null)
         {
             HttpClient client = new HttpClient();
             //client.SetBearerToken(accessToken);
-            client.BaseAddress = new Uri(_settingsConfiguration.Value.ApiUrl);
+            client.BaseAddress = new Uri(apiUrl);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             try
             {

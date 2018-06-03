@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bll", "Bll\Bll.csproj", "{A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{BA938FEB-BC99-4C91-9720-283D16CC9214}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uil", "Uil\Uil.csproj", "{B25E4BC7-336F-4146-9973-B9A4EB521482}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{BA938FEB-BC99-4C91-9720-283D16CC9214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA938FEB-BC99-4C91-9720-283D16CC9214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA938FEB-BC99-4C91-9720-283D16CC9214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25E4BC7-336F-4146-9973-B9A4EB521482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25E4BC7-336F-4146-9973-B9A4EB521482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25E4BC7-336F-4146-9973-B9A4EB521482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25E4BC7-336F-4146-9973-B9A4EB521482}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

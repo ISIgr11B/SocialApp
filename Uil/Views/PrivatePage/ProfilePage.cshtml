@@ -1,0 +1,71 @@
+﻿@model Helpers.Models.PageModels.PrivatePageModel
+
+@{
+    var title = @Model.Person.FirstName +" "+ @Model.Person.LastName; ;
+    ViewData["Title"] = title;
+}
+
+<div>
+    <h2>@Model.Person.FirstName @Model.Person.LastName</h2>
+    <img src="@Model.Person.Picture" style="max-width:200px; max-height: 200px;" />
+    
+    <hr />
+
+    <dl class="dl-horizontal">
+        <div>
+            <h3>Zdjęcia</h3>
+            <div>
+                <form method="post" asp-action="Upload" asp-controller="PrivatePage" enctype="multipart/form-data">
+                    <input type="file" name="files" multiple />
+                    <input type="submit" value="Upload" />
+                </form>
+
+                <form action="#" id="example-form">
+                    <input type="file" name="files" multiple />
+                    <input type="submit" value="Upload" />
+                </form>
+                <script type="text/javascript">
+
+                    $('#example-form').submit(function () {
+
+                        // block form
+
+                        $.post('/Upload', $('#example-form').serialize(), function (data) {
+                            //call back happens here.  Unblock form/show result
+                        });
+
+                        return false; // this prevents regular post, forcing ajax post.
+
+                    });
+
+                </script>
+            </div>
+            @foreach (var picture in Model.PhotosGallery.PhotosPath)
+        {
+            <img src="@picture" style="max-width:100px; max-height: 100px;" />
+    }
+        </div>
+        <div class="friend">
+            <h3>Znajomi</h3>
+            @foreach (var person in Model.Friends.Peoples)
+        {
+            <div>
+                <img src="@Model.Person.Picture" style="max-width:100px; max-height: 100px;" />
+            </div>
+            <div>
+                @person.FirstName @person.LastName
+            </div>
+    }
+        </div>
+        <div class="contentWall">
+            <h3>Ściana</h3>
+            @foreach(var post in Model.ContextWall.Posts)
+            {
+                <div>
+                    <h4>@post.Header</h4>
+                    @post.Body
+                </div>
+            }
+        </div>
+    </dl>
+</div>

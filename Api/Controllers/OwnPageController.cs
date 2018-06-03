@@ -10,61 +10,21 @@ namespace Api.Controllers
     [Route("api/[controller]")]
     public class OwnPageController : BaseController
     {
-        private readonly string  _userLogin;
+        
         public OwnPageController(IServiceFactory serviceFactory) : base(serviceFactory)
         {
-            _userLogin = "";
         }
         
         [HttpGet]
-        public async Task<IActionResult> GetOwnPage()
+        public async Task<IActionResult> GetOwnPage(string userLogin)
         {
-            var task = _serviceFactory.PrivatePageService.GetOwnPage(_userLogin);
+            var task = _serviceFactory.PrivatePageService.GetOwnPage(userLogin);
             var result = await task;
             if (result != null)
                 return Ok(result);
             else
                 return NoContent();
 
-        }
-        [HttpPost]
-        public async Task<IActionResult> PostOwnPage([FromBody] PersonModel person)
-        {
-            var task = _serviceFactory.PrivatePageService.PostOwnPage(_userLogin);
-            var result = await task;
-
-            if (result > 0)
-                //Updated 
-                return Ok();
-            else
-                //Błąd
-                return BadRequest();
-        }
-        [HttpPut]
-        public async Task<IActionResult> UpdateOwnPage([FromBody] PersonModel person)
-        {
-            var task = _serviceFactory.PrivatePageService.UpdateOwnPage(_userLogin);
-            var result = await task;
-
-            if (result > 0)
-                //Updated 
-                return Ok();
-            else
-                //Błąd
-                return BadRequest();
-        }
-        [HttpDelete]
-        public async Task<IActionResult> DeleteOwnPage()
-        {
-            var task = _serviceFactory.PrivatePageService.DeleteOwnPage(_userLogin);
-            var result = await task;
-
-            if (result > 0)
-                //Deleted 
-                return Ok();
-            else
-                //Błąd
-                return BadRequest();
         }
     }
 }
