@@ -10,7 +10,9 @@ namespace Helpers.Models.PageModels
     /*Model wyświelanych informacji o stronie publicznej*/
     public class PublicPageModel
     {
-        public PublicPersonModel PublicPerson { get; set; }
-        public PhotoGalleryModel PhotosGallery {get;set;}
+        public PublicPageModel Person { get; set; }
+        public PhotoGalleryModel PhotosGallery { get; set; }
+        public FriendsModel Friends { get; set; }
+        public ContextWallModel ContextWall { get; set; }
     }
 }

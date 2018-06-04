@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Helpers.Models.PageModels;
+using System.Collections.Generic;
 
 namespace Helpers.Models.ContentModels
 {
     public class FriendsModel
     {
-        public List<PersonModel> Peoples { get; set; }
+        public List<SimpleProfileModel> Peoples { get; set; }
     }
 }

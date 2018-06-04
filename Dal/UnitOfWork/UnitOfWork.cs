@@ -1,9 +1,4 @@
 ﻿using Dal.Context;
-using Dal.Repositories.TestRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dal.UnitOfWork
@@ -11,15 +6,12 @@ namespace Dal.UnitOfWork
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MainDbContext _context;
-        private readonly ITestRepository _testRepository;
 
         public UnitOfWork(
-            MainDbContext context,
-            ITestRepository testRepository
+            MainDbContext context
             )
         {
             _context = context;
-            _testRepository = testRepository;
         }
         public int Commit()
         {
@@ -35,13 +27,7 @@ namespace Dal.UnitOfWork
         #region IDisposable Support
 
         private bool disposedValue = false; // To detect redundant calls
-
-        public ITestRepository TestRepository {
-            get
-            {
-                return _testRepository;
-            }
-        }
+        
 
         protected virtual void Dispose(bool disposing)
         {

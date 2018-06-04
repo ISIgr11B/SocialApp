@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Bll.Services.ProfilesServices;
-using Bll.Services.TestService;
+﻿using Bll.Services.ProfilesServices;
 
 namespace Bll.Services
 {
@@ -12,21 +6,17 @@ namespace Bll.Services
     {       
 
         private bool disposedValue = false; // To detect redundant calls
-        private readonly ITestService _testService;
         private readonly IPrivatePageService _privatePageService;
         private readonly IPersonInfoService _personInfoService;
-
-        public ITestService TestService { get => _testService; }
+        
         public IPrivatePageService PrivatePageService { get => _privatePageService; }
         public IPersonInfoService PersonInfoService { get => _personInfoService; }
 
         public ServiceFactory(
-            ITestService testService,
             IPrivatePageService privatePageService,
             IPersonInfoService personInfoService
             )
         {
-            _testService = testService;
             _privatePageService = privatePageService;
             _personInfoService = personInfoService;
         }

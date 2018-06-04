@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Helpers.Models.ContentModels;
 using Dal.UnitOfWork;
+using Helpers.Models.PageModels;
 
 namespace Bll.Services.ProfilesServices
 {
@@ -14,9 +15,9 @@ namespace Bll.Services.ProfilesServices
         {
         }
 
-        public async  Task<PublicPersonModel> GetPerson(string userLogin)
+        public async  Task<PublicPageModel> GetPerson(string userLogin)
         {
-            var result =  new PublicPersonModel();
+            var result =  new PublicPageModel();
             return result;
         }
     }

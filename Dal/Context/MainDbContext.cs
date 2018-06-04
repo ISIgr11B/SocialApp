@@ -21,8 +21,6 @@ namespace Dal.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Test>().
-                ToTable("Test", "dbo");
             modelBuilder.Entity<UserEntity>().
                 ToTable("User", "dbo");
             modelBuilder.Entity<AccountEntity>().
@@ -30,8 +28,7 @@ namespace Dal.Context
                 HasOne(p=> p.User).
                 WithOne(p => p.Account);
         }
-
-        public DbSet<Test> Tests { get; set; }
+        
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<AccountEntity> Accounts { get; set; }
 

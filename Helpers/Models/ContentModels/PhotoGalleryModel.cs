@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Helpers.Models.DataModels;
+using System.Collections.Generic;
 
 namespace Helpers.Models.ContentModels
 {
     public class PhotoGalleryModel
     {
-        public List<string> PhotosPath { get; set; }
+        public List<PhotoModel> PhotosPath { get; set; }
     }
 }

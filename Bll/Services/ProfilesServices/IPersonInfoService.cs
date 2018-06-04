@@ -1,4 +1,5 @@
 ﻿using Helpers.Models.ContentModels;
+using Helpers.Models.PageModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Bll.Services.ProfilesServices
 {
     public interface IPersonInfoService 
     {
-        Task<PublicPersonModel> GetPerson(string userLogin);
+        Task<PublicPageModel> GetPerson(string userLogin);
     }
 }

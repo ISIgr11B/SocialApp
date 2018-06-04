@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Helpers.Models.ContentModels;
 using Helpers.Models.PageModels;
 using Dal.UnitOfWork;
+using Helpers.Models.DataModels;
 
 namespace Bll.Services.ProfilesServices
 {
-    public class PrivatePageService :ServiceBase, IPrivatePageService
+    public class PrivatePageService : ServiceBase, IPrivatePageService
     {
         public PrivatePageService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
@@ -26,17 +27,26 @@ namespace Bll.Services.ProfilesServices
             {
                 Person = new PersonModel { FirstName = "Jan", LastName = "Kowalski", Picture = "/images/ludziki.jpg" },
                 Friends = new FriendsModel
-                { 
-                    Peoples = new List<PersonModel>
+                {
+                    Peoples = new List<SimpleProfileModel>
                     {
-                        new PersonModel { FirstName = "Edward", LastName = "Nowak" , Picture = "/images/ludziki.jpg" },
-                        new PersonModel { FirstName = "Paweł", LastName = "Janusz" , Picture = "/images/ludziki.jpg" }
+                        new SimpleProfileModel{
+                            Person= new PersonModel { FirstName = "Edward", LastName = "Nowak" , Picture = "/images/ludziki.jpg" },
+                            Photo = new PhotoModel()
+                        },
+                        new SimpleProfileModel{
+                            Person = new PersonModel { FirstName = "Paweł", LastName = "Janusz" , Picture = "/images/ludziki.jpg" },
+                            Photo = new PhotoModel()
+                        }
                     }
                 },
                 PhotosGallery = new PhotoGalleryModel
-                {   PhotosPath = new List<string>
+                {
+                    PhotosPath = new List<PhotoModel>
                     {
-                        "/images/ludziki.jpg","/images/ludziki.jpg","/images/ludziki.jpg"
+                        new PhotoModel { Path="/images/ludziki.jpg" },
+                        new PhotoModel { Path="/images/ludziki.jpg" },
+                        new PhotoModel { Path="/images/ludziki.jpg" }
                     }
                 },
                 ContextWall = new ContextWallModel
