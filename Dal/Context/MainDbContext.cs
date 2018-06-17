@@ -21,16 +21,29 @@ namespace Dal.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<UserEntity>().
                 ToTable("User", "dbo");
-            modelBuilder.Entity<AccountEntity>().
-                ToTable("Account", "dbo").
-                HasOne(p=> p.User).
-                WithOne(p => p.Account);
+            modelBuilder.Entity<UserEntity>().
+                HasMany(x => x.Photos).
+                WithOne(x => x.User);
+            modelBuilder.Entity<UserEntity>().
+                HasMany(x => x.Posts).
+                WithOne(x => x.User);
+
+            modelBuilder.Entity<UserEntity>().
+                HasMany(x => x.Friends).
+                WithOne(x => x.User);
+            modelBuilder.Entity<UserEntity>().
+                HasMany(x => x.IsRelated).
+                WithOne(x => x.RelativeUser);
+
         }
         
         public DbSet<UserEntity> Users { get; set; }
-        public DbSet<AccountEntity> Accounts { get; set; }
+        public DbSet<PhotoEntity> Photos { get; set; }
+        public DbSet<PostEntity> Posts { get; set; }
+        public DbSet<FriendsEntity> Friends { get; set; }
 
     }
 }

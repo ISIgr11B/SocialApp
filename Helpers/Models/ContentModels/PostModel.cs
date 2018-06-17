@@ -1,4 +1,6 @@
-﻿namespace Helpers.Models.ContentModels
+﻿using static Helpers.Models.Enums.Definitions;
+
+namespace Helpers.Models.ContentModels
 {
     public class PostModel
     {
@@ -7,11 +9,5 @@
         public Visibility VisibilityType { get; set; }
     }
 
-    public enum Visibility
-    {
-        PUBLIC,
-        PRIVATE,
-        FRIENDS,
-        FRIENDSOFFIRENDS
-    }
+    
 }

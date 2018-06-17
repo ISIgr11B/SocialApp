@@ -1,4 +1,4 @@
-﻿namespace Vive.Vcs.Visualisation.Dal.VisualisationDbContext.Entities
+﻿namespace Dal.Entities
 {
     public interface IEntity
     {

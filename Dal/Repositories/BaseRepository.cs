@@ -1,13 +1,13 @@
 ﻿using Dal.Context;
+using Dal.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Vive.Vcs.Visualisation.Dal.VisualisationDbContext.Entities;
 
-namespace Vive.Vcs.Visualisation.Dal.VisualisationDbContext.Repositories
+namespace Dal.Repositories
 {
     public abstract class BaseRepository<TObject> : IBaseRepository<TObject> where TObject : class, IEntity
     {
