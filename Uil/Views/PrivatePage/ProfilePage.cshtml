@@ -1,14 +1,17 @@
-﻿@model Helpers.Models.PageModels.PrivatePageModel
+﻿@using Helpers.Models.ContentModels
+@using Helpers.Models.DataModels
+@using Helpers.Models.PageModels
+@model Helpers.Models.PageModels.PrivatePageModel
 
 @{
-    var title = @Model.Person.FirstName +" "+ @Model.Person.LastName; ;
+    var title = @Model?.Person?.FirstName + " " + @Model?.Person?.LastName; ;
     ViewData["Title"] = title;
 }
 
 <div class="container">
-    <h2>@Model.Person.FirstName @Model.Person.LastName</h2>
-    <img src="@Model.Person.Picture" style="max-width:200px; max-height: 200px;" />
-    
+    <h2>@Model?.Person?.FirstName @Model?.Person?.LastName</h2>
+    <img src="@Model?.Person?.Picture" style="max-width:200px; max-height: 200px;" />
+
     <hr />
 
     <dl class="dl-horizontal">
@@ -40,26 +43,26 @@
 
                 </script>
             </div>
-            @foreach (var picture in Model.PhotosGallery.PhotosPath)
-        {
-            <img src="@picture" style="max-width:100px; max-height: 100px;" />
-    }
+            @foreach (var picture in Model?.PhotosGallery?.PhotosPath ?? new List<PhotoModel>())
+            {
+                <img src="@picture" style="max-width:100px; max-height: 100px;" />
+            }
         </div>
         <div class="col-3 friend">
             <h3>Znajomi</h3>
-            @foreach (var person in Model.Friends.Peoples)
-        {
-            <div>
-                <img src="@Model.Person.Picture" style="max-width:100px; max-height: 100px;" />
-            </div>
-            <div>
-                @person.Person.FirstName @person.Person.LastName
-            </div>
-    }
+            @foreach (var person in Model?.Friends?.Peoples ?? new List<SimpleProfileModel>())
+            {
+                <div>
+                    <img src="@Model?.Person?.Picture" style="max-width:100px; max-height: 100px;" />
+                </div>
+                <div>
+                    @person.Person?.FirstName @person.Person?.LastName
+                </div>
+            }
         </div>
         <div class="contentWall">
             <h3>Ściana</h3>
-            @foreach(var post in Model.ContextWall.Posts)
+            @foreach (var post in Model?.ContextWall?.Posts ?? new List<PostModel>())
             {
                 <div>
                     <h4>@post.Header</h4>
