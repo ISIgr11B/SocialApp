@@ -1,74 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dal.Entities;
+using Dal.UnitOfWork;
 using Helpers.Models.ContentModels;
 using Helpers.Models.PageModels;
-using Dal.UnitOfWork;
-using Helpers.Models.DataModels;
 
 namespace Bll.Services.ProfilesServices
 {
-    public class PrivatePageService : ServiceBase, IPrivatePageService
+    public class PrivatePageService : ServiceBase,IPrivatePageService
     {
         public PrivatePageService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-
-        public Task<int> DeleteOwnPage(string userLogin)
+        public PrivatePageModel GetOwnPage(string userIdentificator)
         {
-            throw new NotImplementedException();
-        }
+            var model = new PrivatePageModel();;
 
-        public async Task<PrivatePageModel> GetOwnPage(string userIdentificator)
-        {
-            var page = new PrivatePageModel
+            var person = base._unitOfWork.UserRepository.Find(x => x.UserIdentificator == userIdentificator);
+            if (person == null)
+                return null;
+            model.Person = new PersonModel
             {
-                Person = new PersonModel { FirstName = "Jan", LastName = "Kowalski", Picture = "/images/ludziki.jpg" },
-                Friends = new FriendsModel
-                {
-                    Peoples = new List<SimpleProfileModel>
-                    {
-                        new SimpleProfileModel{
-                            Person= new PersonModel { FirstName = "Edward", LastName = "Nowak" , Picture = "/images/ludziki.jpg" },
-                            Photo = new PhotoModel()
-                        },
-                        new SimpleProfileModel{
-                            Person = new PersonModel { FirstName = "Paweł", LastName = "Janusz" , Picture = "/images/ludziki.jpg" },
-                            Photo = new PhotoModel()
-                        }
-                    }
-                },
-                PhotosGallery = new PhotoGalleryModel
-                {
-                    PhotosPath = new List<PhotoModel>
-                    {
-                        new PhotoModel { Path="/images/ludziki.jpg" },
-                        new PhotoModel { Path="/images/ludziki.jpg" },
-                        new PhotoModel { Path="/images/ludziki.jpg" }
-                    }
-                },
-                ContextWall = new ContextWallModel
-                {
-                    Posts = new List<PostModel>
-                    {
-                        new PostModel{Header = "Nagłówek 1", Body="Piszę o świecie"},
-                        new PostModel{Header = "Nagłówek 2", Body="Piszę o Marsie"}
-                    }
-                }
+                UserIdentificator = userIdentificator,
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                Birthdate = person.Birthdate,
+                Gender = person.Gender,
+                JoinDate = person.JoinDate,
+                Mail = person.Mail
             };
-            return page;
+
+            return model;
         }
 
-        public Task<int> PostOwnPage(PrivatePageModel privatePage)
+        public int UpdateOwnData(PersonModel personModel)
         {
-            throw new NotImplementedException();
+            var person = base._unitOfWork.UserRepository.Find(x => x.UserIdentificator == personModel.UserIdentificator);
+            if (person == null)
+                return -1;
+
+            person.FirstName = personModel.FirstName;
+            person.LastName = personModel.LastName;
+            person.Birthdate = personModel.Birthdate;
+            person.Gender = personModel.Gender;
+            person.JoinDate = personModel.JoinDate;
+            person.Mail = personModel.Mail;
+            _unitOfWork.UserRepository.Update(person);
+
+            return _unitOfWork.Commit();
         }
 
-        public Task<int> UpdateOwnPage(string userLogin, PrivatePageModel privatePage)
+        public int AddPost(string userIdentificator, PostModel post)
         {
-            throw new NotImplementedException();
+            var person = base._unitOfWork.UserRepository.Find(x => x.UserIdentificator == userIdentificator);
+            if (person == null)
+                return -1;
+            var postEntity = new PostEntity
+            {
+                Body = post.Body,
+                Header = post.Header,
+                VisibilityType = post.VisibilityType,
+                User = person
+            };
+            _unitOfWork.PostRepository.Add(postEntity);
+            return _unitOfWork.Commit();
         }
     }
 }

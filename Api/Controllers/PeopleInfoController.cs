@@ -22,8 +22,7 @@ namespace Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string userLogin)
         {
-            var personAsync = _serviceFactory.PersonInfoService.GetPerson(userLogin);
-            var person = await personAsync;
+            var person = _serviceFactory.PersonInfoService.GetPerson(userLogin);
 
             if (person != null)
             {

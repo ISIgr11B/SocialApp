@@ -10,6 +10,6 @@ namespace Bll.Services.ProfilesServices
 {
     public interface IPersonInfoService 
     {
-        Task<PublicPageModel> GetPerson(string userLogin);
+        PublicPageModel GetPerson(string userLogin);
     }
 }

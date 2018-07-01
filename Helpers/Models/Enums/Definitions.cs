@@ -18,8 +18,14 @@ namespace Helpers.Models.Enums
         {
             PENDING,
             FRIENDS,
-            BLOCKING,
             REMOVED
+        }
+        public enum BlockType
+        {
+            NONE,
+            FIRST,
+            SECOND,
+            BOOTH
         }
     }
 }

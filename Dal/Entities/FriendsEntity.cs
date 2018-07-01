@@ -13,6 +13,7 @@ namespace Dal.Entities
         public int UserId { get; set; }
         public int RelativeUserId { get; set; }
         public FriendType Type { get; set; }
+        public BlockType Block { get; set; }
 
         public UserEntity User { get; set; }
         public UserEntity RelativeUser { get; set; }

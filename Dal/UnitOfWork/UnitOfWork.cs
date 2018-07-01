@@ -1,5 +1,6 @@
 ﻿using Dal.Context;
 using System.Threading.Tasks;
+using Dal.Repositories;
 
 namespace Dal.UnitOfWork
 {
@@ -8,11 +9,25 @@ namespace Dal.UnitOfWork
         private readonly MainDbContext _context;
 
         public UnitOfWork(
-            MainDbContext context
+            MainDbContext context,
+            IFriendsRepository friendsRepository,
+            IPhotoRepository photoRepository,
+            IPostRepository postRepository,
+            IUserRepository userRepository
             )
         {
             _context = context;
+            FriendsRepository = friendsRepository;
+            PhotoRepository = photoRepository;
+            PostRepository = postRepository;
+            UserRepository = userRepository;
         }
+
+        public IFriendsRepository FriendsRepository { get; private set; }
+        public IPhotoRepository PhotoRepository { get; private set; }
+        public IPostRepository PostRepository { get; private set; }
+        public IUserRepository UserRepository { get; private set; }
+
         public int Commit()
         {
             return _context.SaveChanges();

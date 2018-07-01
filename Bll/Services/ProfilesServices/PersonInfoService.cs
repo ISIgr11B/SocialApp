@@ -15,7 +15,7 @@ namespace Bll.Services.ProfilesServices
         {
         }
 
-        public async  Task<PublicPageModel> GetPerson(string userLogin)
+        public PublicPageModel GetPerson(string userLogin)
         {
             var result =  new PublicPageModel();
             return result;

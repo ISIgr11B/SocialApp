@@ -18,8 +18,8 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetOwnPage(string userLogin)
         {
-            var task = _serviceFactory.PrivatePageService.GetOwnPage(userLogin);
-            var result = await task;
+
+            var result = _serviceFactory.PrivatePageService.GetOwnPage(userLogin);
             if (result != null)
                 return Ok(result);
             else
