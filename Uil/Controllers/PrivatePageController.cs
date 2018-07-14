@@ -38,9 +38,16 @@ namespace Web.Controllers
             {
                 if (file.Length > 0)
                 {
-                    using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                    try
                     {
-                        await file.CopyToAsync(fileStream);
+                        using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream);
+                        }
+                    }
+                    catch (DirectoryNotFoundException)
+                    {
+                        Directory.CreateDirectory(uploads);
                     }
                 }
             }

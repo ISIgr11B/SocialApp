@@ -18,30 +18,12 @@
         <div class="col-3">
             <h3>Zdjęcia</h3>
             <div>
-                <form method="post" asp-action="Upload" asp-controller="PrivatePage" enctype="multipart/form-data">
-                    <input type="file" name="files" multiple />
-                    <input type="submit" value="Upload" />
+                <form id="pic-post" method="post" action="http://localhost:57812/api/Photo" enctype="multipart/form-data">
+                    <input class="btn btn-default btn-file" type="file" name="files" multiple />
+                    <a href="#" class="btn btn-primary">Upload</a>
                 </form>
 
-                <form action="#" id="example-form">
-                    <input type="file" name="files" multiple />
-                    <input type="submit" value="Upload" />
-                </form>
-                <script type="text/javascript">
 
-                    $('#example-form').submit(function () {
-
-                        // block form
-
-                        $.post('/Upload', $('#example-form').serialize(), function (data) {
-                            //call back happens here.  Unblock form/show result
-                        });
-
-                        return false; // this prevents regular post, forcing ajax post.
-
-                    });
-
-                </script>
             </div>
             @foreach (var picture in Model?.PhotosGallery?.PhotosPath ?? new List<PhotoModel>())
             {
@@ -72,3 +54,18 @@
         </div>
     </dl>
 </div>
+@section Scripts{
+    <script src="~/lib/jquery-form/jquery-form-min.js"></script>
+    <script>
+        var options = {
+            url: 'http://localhost:57812/api/Photo',
+            type: 'post',
+            success: function () {
+                alert(`Dodano zdjęcie`);
+            }
+        };
+        $(`#pic-post a`).click(function () {
+            $(`#pic-post`).ajaxSubmit(options)
+        })
+    </script>
+}

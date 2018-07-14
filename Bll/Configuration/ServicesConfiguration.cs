@@ -16,8 +16,8 @@ namespace Bll.Configuration
             services.AddScoped<IPostRepository, PostRepository>();
             /*Serwisy */
             services.AddScoped<IServiceFactory, ServiceFactory>();
-            //services.AddScoped<IPrivatePageService, PrivatePageServiceMemory>();
-            services.AddScoped<IPrivatePageService, PrivatePageService>();
+            services.AddScoped<IPrivatePageService, PrivatePageServiceMemory>();
+            //services.AddScoped<IPrivatePageService, PrivatePageService>();
             services.AddScoped<IPersonInfoService, PersonInfoService>();
 
             /*UnitOfWork */
